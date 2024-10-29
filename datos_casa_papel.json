@@ -1,0 +1,32 @@
+{
+    "titulo": "La Casa de Papel",
+    "descripcion": "¡La resistencia nunca muere!",
+    "imagenes": [
+        "imagenes/banda1.png",
+        "imagenes/cabeza-de-dali.png",
+        "imagenes/banda2.png"
+    ],
+    "temporadas": [
+        {
+            "imagen": "imagenes/temporada1.jpg",
+            "resumen": "Resumen de la temporada 1: Aquí se presenta el atraco original a la Fábrica Nacional de Moneda y Timbre."
+        },
+        {
+            "imagen": "imagenes/temporada2.png",
+            "resumen": "Resumen de la temporada 2: La conclusión del atraco y los destinos de los personajes principales."
+        },
+        {
+            "imagen": "imagenes/temporada3.jpg",
+            "resumen": "Resumen de la temporada 3: Un nuevo atraco a petición de Río y Tokio."
+        },
+        {
+            "imagen": "imagenes/temporada4.jpg",
+            "resumen": "Resumen de la temporada 4: La resistencia enfrenta desafíos internos y externos."
+        },
+        {
+            "imagen": "imagenes/temporada5.jpg",
+            "resumen": "Resumen de la temporada 5: El desenlace final de la resistencia en un enfrentamiento épico."
+        }
+    ]
+}
+

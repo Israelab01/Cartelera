@@ -1,0 +1,57 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.cartel {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px black;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.season-image {
+    transition: transform 0.3s;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.season-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Estilos del modal */
+.modal-content {
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header h5 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.modal-footer .btn-secondary {
+    background-color: #333;
+    border: none;
+}
