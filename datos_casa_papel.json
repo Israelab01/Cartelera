@@ -1,32 +1,28 @@
 {
     "titulo": "La Casa de Papel",
     "descripcion": "¡La resistencia nunca muere!",
-    "imagenes": [
-        "imagenes/banda1.png",
-        "imagenes/cabeza-de-dali.png",
-        "imagenes/banda2.png"
-    ],
     "temporadas": [
         {
-            "imagen": "imagenes/temporada1.jpg",
-            "resumen": "Resumen de la temporada 1: Aquí se presenta el atraco original a la Fábrica Nacional de Moneda y Timbre."
+            "imagen": "imagenes/temporada1.png",
+            "resumen": "La primera temporada introduce a los personajes principales y el ambicioso plan de asaltar la Fábrica Nacional de Moneda y Timbre. En esta temporada, vemos la preparación detallada del atraco, la creación de una identidad grupal, y cómo cada miembro aporta sus habilidades para asegurar el éxito. La temporada explora el dilema moral entre el crimen y la justicia, mientras la policía intenta descifrar el plan del grupo. A lo largo de esta fase, el liderazgo del Profesor se vuelve crucial, y su habilidad para manipular los eventos mantiene la tensión en cada episodio."
         },
         {
             "imagen": "imagenes/temporada2.png",
-            "resumen": "Resumen de la temporada 2: La conclusión del atraco y los destinos de los personajes principales."
+            "resumen": "En la segunda temporada, el atraco llega a su clímax. Las tensiones aumentan y los personajes enfrentan conflictos internos y externos. La temporada se enfoca en los sacrificios personales y en la presión que ejercen las autoridades para terminar con el atraco. La estrategia del Profesor se pone a prueba, y los personajes deben tomar decisiones cruciales bajo presión. Esta temporada marca el final del primer atraco y plantea interrogantes sobre el destino de los sobrevivientes y su futuro."
         },
         {
-            "imagen": "imagenes/temporada3.jpg",
-            "resumen": "Resumen de la temporada 3: Un nuevo atraco a petición de Río y Tokio."
+            "imagen": "imagenes/temporada3.png",
+            "resumen": "Después de disfrutar de la libertad tras el primer atraco, los protagonistas son obligados a reunirse para un nuevo asalto, esta vez al Banco de España. La serie introduce nuevos personajes y relaciones, y se profundiza en la psicología de los personajes, especialmente en cómo el éxito y la fama han impactado sus vidas. La temporada trae un nuevo nivel de intriga y estrategia, pues deben enfrentarse a un enemigo aún más preparado y brutal."
         },
         {
-            "imagen": "imagenes/temporada4.jpg",
-            "resumen": "Resumen de la temporada 4: La resistencia enfrenta desafíos internos y externos."
+            "imagen": "imagenes/temporada4.png",
+            "resumen": "La cuarta temporada se centra en la batalla en el Banco de España, las amenazas internas y el riesgo de que el plan fracase. Cada personaje enfrenta desafíos personales y el equipo se ve dividido por conflictos internos. La temporada también introduce dilemas éticos complejos, y cada episodio revela más sobre las motivaciones profundas de los protagonistas. La lucha entre el equipo y las fuerzas del orden alcanza su punto más álgido, llevando a decisiones difíciles y consecuencias inesperadas."
         },
         {
-            "imagen": "imagenes/temporada5.jpg",
-            "resumen": "Resumen de la temporada 5: El desenlace final de la resistencia en un enfrentamiento épico."
+            "imagen": "imagenes/temporada5.png",
+            "resumen": "Resumen extenso de la temporada 5: La temporada final reúne todos los hilos narrativos en una conclusión explosiva. El enfrentamiento final entre la resistencia y las fuerzas de seguridad se convierte en una batalla de ingenio y voluntad. Los personajes están al límite, y cada uno se enfrenta a su propia mortalidad y lealtad hacia el grupo. La narrativa explora temas de redención, sacrificio y justicia. Esta temporada ofrece un desenlace emotivo y reflexivo que cierra la historia de la resistencia."
         }
     ]
 }
+
 

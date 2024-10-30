@@ -1,4 +1,4 @@
-const requestURL = "./datos_casa_papel.json"; // Asegúrate de tener la ruta correcta
+const requestURL = "./datos_casa_papel.json";
 
 async function fetchCasaPapelJson() {
     const response = await fetch(requestURL);
@@ -7,55 +7,35 @@ async function fetchCasaPapelJson() {
 }
 
 async function showCasaPapelData() {
-    const cartel = document.getElementById("cartel");
+    const leftColumn = document.getElementById("leftColumn");
+    const rightColumnTitle = document.getElementById("seasonTitle");
+    const rightColumnDescription = document.getElementById("seasonDescription");
     const casaPapelData = await fetchCasaPapelJson();
 
-    // Título y Descripción
     const titulo = document.createElement("h1");
     titulo.textContent = casaPapelData.titulo;
-    cartel.appendChild(titulo);
-
-    const descripcion = document.createElement("p");
-    descripcion.textContent = casaPapelData.descripcion;
-    cartel.appendChild(descripcion);
-
-    // Imágenes de las temporadas
-    const temporadasDiv = document.createElement("div");
-    temporadasDiv.classList.add("row", "justify-content-center");
+    titulo.classList.add("text-center", "my-4");
+    leftColumn.appendChild(titulo);
 
     casaPapelData.temporadas.forEach((temporada, index) => {
         const imgContainer = document.createElement("div");
-        imgContainer.classList.add("col-md-2", "text-center", "mb-3");
+        imgContainer.classList.add("text-center", "my-3", "position-relative");
 
         const img = document.createElement("img");
         img.src = temporada.imagen;
-        img.classList.add("img-fluid", "rounded", "shadow", "season-image");
+        img.classList.add("img-fluid", "rounded", "shadow", "mb-2");
         img.alt = `Imagen de la temporada ${index + 1}`;
         img.style.cursor = "pointer";
+        img.style.width = "80%";
 
-        // Evento para mostrar el modal con el resumen
         img.addEventListener("click", () => {
-            showSeasonModal(temporada.resumen, index + 1);
+            rightColumnTitle.textContent = `Temporada ${index + 1}`;
+            rightColumnDescription.textContent = temporada.resumen;
         });
 
         imgContainer.appendChild(img);
-        temporadasDiv.appendChild(imgContainer);
+        leftColumn.appendChild(imgContainer);
     });
-
-    cartel.appendChild(temporadasDiv);
-}
-
-// Función para mostrar el modal
-function showSeasonModal(resumen, seasonNumber) {
-    const modal = document.getElementById("seasonModal");
-    const modalTitle = document.getElementById("modalTitle");
-    const modalBody = document.getElementById("modalBody");
-
-    modalTitle.textContent = `Temporada ${seasonNumber}`;
-    modalBody.textContent = resumen;
-
-    const bootstrapModal = new bootstrap.Modal(modal);
-    bootstrapModal.show();
 }
 
 showCasaPapelData();
