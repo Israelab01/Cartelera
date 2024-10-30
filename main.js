@@ -1,41 +1,58 @@
-const requestURL = "./datos_casa_papel.json";
+// main.js
 
-async function fetchCasaPapelJson() {
-    const response = await fetch(requestURL);
-    const data = await response.json();
-    return data;
-}
+// Referencias a los elementos del DOM
+const temporadasList = document.getElementById('temporadas');
+const contenidoPrincipal = document.getElementById('contenido-principal');
 
-async function showCasaPapelData() {
-    const leftColumn = document.getElementById("leftColumn");
-    const rightColumnTitle = document.getElementById("seasonTitle");
-    const rightColumnDescription = document.getElementById("seasonDescription");
-    const casaPapelData = await fetchCasaPapelJson();
+// Cargar datos de JSON y generar el menú
+fetch('datos_casa_papel.json')
+    .then(response => response.json())
+    .then(data => {
+        const { titulo, descripcion, temporadas } = data;
+        document.getElementById('titulo').innerText = titulo;
 
-    const titulo = document.createElement("h1");
-    titulo.textContent = casaPapelData.titulo;
-    titulo.classList.add("text-center", "my-4");
-    leftColumn.appendChild(titulo);
+        // Generar menú de temporadas y episodios
+        temporadas.forEach((temporada, index) => {
+            const temporadaItem = document.createElement('div');
+            temporadaItem.classList.add('temporada-item');
+            temporadaItem.innerText = `Temporada ${index + 1}`;
+            
+            // Contenedor para los episodios
+            const episodiosList = document.createElement('div');
+            episodiosList.classList.add('episodios-list');
+            episodiosList.style.display = 'none';
 
-    casaPapelData.temporadas.forEach((temporada, index) => {
-        const imgContainer = document.createElement("div");
-        imgContainer.classList.add("text-center", "my-3", "position-relative");
+            // Agregar episodios a cada temporada
+            temporada.episodios.forEach((episodio, epIndex) => {
+                const episodioItem = document.createElement('div');
+                episodioItem.classList.add('episodio-item');
+                episodioItem.innerText = `Episodio ${epIndex + 1}: ${episodio.titulo}`;
+                
+                // Añadir evento para mostrar descripción del episodio al hacer clic
+                episodioItem.addEventListener('click', () => {
+                    mostrarDescripcionEpisodio(episodio.titulo, episodio.descripcion);
+                });
 
-        const img = document.createElement("img");
-        img.src = temporada.imagen;
-        img.classList.add("img-fluid", "rounded", "shadow", "mb-2");
-        img.alt = `Imagen de la temporada ${index + 1}`;
-        img.style.cursor = "pointer";
-        img.style.width = "80%";
+                episodiosList.appendChild(episodioItem);
+            });
 
-        img.addEventListener("click", () => {
-            rightColumnTitle.textContent = `Temporada ${index + 1}`;
-            rightColumnDescription.textContent = temporada.resumen;
+            temporadaItem.addEventListener('click', () => {
+                // Alternar visibilidad de la lista de episodios
+                const isVisible = episodiosList.style.display === 'block';
+                document.querySelectorAll('.episodios-list').forEach(list => list.style.display = 'none');
+                episodiosList.style.display = isVisible ? 'none' : 'block';
+            });
+
+            temporadasList.appendChild(temporadaItem);
+            temporadasList.appendChild(episodiosList);
         });
+    })
+    .catch(error => console.error('Error al cargar los datos:', error));
 
-        imgContainer.appendChild(img);
-        leftColumn.appendChild(imgContainer);
-    });
+// Función para mostrar la descripción del episodio seleccionado
+function mostrarDescripcionEpisodio(titulo, descripcion) {
+    contenidoPrincipal.innerHTML = `
+        <h2>${titulo}</h2>
+        <p>${descripcion}</p>
+    `;
 }
-
-showCasaPapelData();

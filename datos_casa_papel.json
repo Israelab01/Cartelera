@@ -3,26 +3,70 @@
     "descripcion": "¡La resistencia nunca muere!",
     "temporadas": [
         {
-            "imagen": "imagenes/temporada1.png",
-            "resumen": "La primera temporada introduce a los personajes principales y el ambicioso plan de asaltar la Fábrica Nacional de Moneda y Timbre. En esta temporada, vemos la preparación detallada del atraco, la creación de una identidad grupal, y cómo cada miembro aporta sus habilidades para asegurar el éxito. La temporada explora el dilema moral entre el crimen y la justicia, mientras la policía intenta descifrar el plan del grupo. A lo largo de esta fase, el liderazgo del Profesor se vuelve crucial, y su habilidad para manipular los eventos mantiene la tensión en cada episodio."
+            "resumen": "La primera temporada introduce a los personajes principales y el ambicioso plan de asaltar la Fábrica Nacional de Moneda y Timbre.",
+            "episodios": [
+                { "titulo": "Episodio 1", "descripcion": "El Profesor recluta a una joven experta en atracos y a otros siete delincuentes para llevar a cabo un gran asalto a la Fábrica Nacional de Moneda y Timbre.." },
+                { "titulo": "Episodio 2", "descripcion": "Los ladrones toman el control de la Fábrica Nacional de Moneda y Timbre." },
+                { "titulo": "Episodio 3", "descripcion": "El plan empieza a complicarse cuando los policías se acercan." },
+                { "titulo": "Episodio 4", "descripcion": "El Profesor se enfrenta a la inspectora Raquel en un juego psicológico." },
+                { "titulo": "Episodio 5", "descripcion": "Los ladrones deben lidiar con la resistencia de los rehenes." },
+                { "titulo": "Episodio 6", "descripcion": "Se revela una traición que pone en riesgo el plan." },
+                { "titulo": "Episodio 7", "descripcion": "Raquel se acerca al Profesor sin darse cuenta." },
+                { "titulo": "Episodio 8", "descripcion": "Los policías empiezan a atacar la Fábrica de Moneda y Timbre." },
+                { "titulo": "Episodio 9", "descripcion": "El Profesor y los ladrones intentan escapar." }
+            ]
         },
         {
-            "imagen": "imagenes/temporada2.png",
-            "resumen": "En la segunda temporada, el atraco llega a su clímax. Las tensiones aumentan y los personajes enfrentan conflictos internos y externos. La temporada se enfoca en los sacrificios personales y en la presión que ejercen las autoridades para terminar con el atraco. La estrategia del Profesor se pone a prueba, y los personajes deben tomar decisiones cruciales bajo presión. Esta temporada marca el final del primer atraco y plantea interrogantes sobre el destino de los sobrevivientes y su futuro."
+            "resumen": "La segunda temporada desarrolla el plan y el clímax del atraco.",
+            "episodios": [
+                { "titulo": "Episodio 1", "descripcion": "La tensión entre los ladrones crece mientras enfrentan a la policía." },
+                { "titulo": "Episodio 2", "descripcion": "Los rehenes comienzan a colaborar con los ladrones." },
+                { "titulo": "Episodio 3", "descripcion": "Una fuga se planea mientras el Profesor intenta ganar tiempo." },
+                { "titulo": "Episodio 4", "descripcion": "La policía descubre un punto débil en el plan del Profesor." },
+                { "titulo": "Episodio 5", "descripcion": "Los ladrones deben elegir entre el dinero o su libertad." },
+                { "titulo": "Episodio 6", "descripcion": "El plan llega a su conclusión y los personajes enfrentan las consecuencias." }
+            ]
         },
         {
-            "imagen": "imagenes/temporada3.png",
-            "resumen": "Después de disfrutar de la libertad tras el primer atraco, los protagonistas son obligados a reunirse para un nuevo asalto, esta vez al Banco de España. La serie introduce nuevos personajes y relaciones, y se profundiza en la psicología de los personajes, especialmente en cómo el éxito y la fama han impactado sus vidas. La temporada trae un nuevo nivel de intriga y estrategia, pues deben enfrentarse a un enemigo aún más preparado y brutal."
+            "resumen": "La tercera temporada lleva la historia a un nuevo atraco, esta vez en el Banco de España.",
+            "episodios": [
+                { "titulo": "Episodio 1", "descripcion": "El Profesor y su equipo planean un nuevo golpe para salvar a Río." },
+                { "titulo": "Episodio 2", "descripcion": "Los ladrones irrumpen en el Banco de España y toman el control." },
+                { "titulo": "Episodio 3", "descripcion": "La resistencia de los rehenes amenaza con desestabilizar el plan." },
+                { "titulo": "Episodio 4", "descripcion": "El Profesor trata de mantenerse un paso por delante de la policía." },
+                { "titulo": "Episodio 5", "descripcion": "Alicia Sierra se convierte en una amenaza directa para el Profesor." },
+                { "titulo": "Episodio 6", "descripcion": "Las tensiones dentro del grupo alcanzan un punto crítico." },
+                { "titulo": "Episodio 7", "descripcion": "Un giro inesperado pone en riesgo a los ladrones." },
+                { "titulo": "Episodio 8", "descripcion": "El equipo se enfrenta a una amenaza que podría destruirlos." }
+            ]
         },
         {
-            "imagen": "imagenes/temporada4.png",
-            "resumen": "La cuarta temporada se centra en la batalla en el Banco de España, las amenazas internas y el riesgo de que el plan fracase. Cada personaje enfrenta desafíos personales y el equipo se ve dividido por conflictos internos. La temporada también introduce dilemas éticos complejos, y cada episodio revela más sobre las motivaciones profundas de los protagonistas. La lucha entre el equipo y las fuerzas del orden alcanza su punto más álgido, llevando a decisiones difíciles y consecuencias inesperadas."
+            "resumen": "La cuarta temporada explora las consecuencias emocionales y las traiciones internas durante el atraco.",
+            "episodios": [
+                { "titulo": "Episodio 1", "descripcion": "La salud de Nairobi es una prioridad mientras la policía se acerca." },
+                { "titulo": "Episodio 2", "descripcion": "Un traidor entre los ladrones pone en peligro el atraco." },
+                { "titulo": "Episodio 3", "descripcion": "El Profesor sufre una crisis mientras su plan se desmorona." },
+                { "titulo": "Episodio 4", "descripcion": "Los ladrones deben tomar decisiones difíciles para sobrevivir." },
+                { "titulo": "Episodio 5", "descripcion": "Un sacrificio inesperado cambia el curso del atraco." },
+                { "titulo": "Episodio 6", "descripcion": "Las tensiones aumentan mientras el equipo enfrenta desafíos emocionales." },
+                { "titulo": "Episodio 7", "descripcion": "El equipo intenta ganar tiempo mientras el final se acerca." },
+                { "titulo": "Episodio 8", "descripcion": "El Profesor se enfrenta a una decisión que cambiará todo." }
+            ]
         },
         {
-            "imagen": "imagenes/temporada5.png",
-            "resumen": "Resumen extenso de la temporada 5: La temporada final reúne todos los hilos narrativos en una conclusión explosiva. El enfrentamiento final entre la resistencia y las fuerzas de seguridad se convierte en una batalla de ingenio y voluntad. Los personajes están al límite, y cada uno se enfrenta a su propia mortalidad y lealtad hacia el grupo. La narrativa explora temas de redención, sacrificio y justicia. Esta temporada ofrece un desenlace emotivo y reflexivo que cierra la historia de la resistencia."
+            "resumen": "La quinta temporada concluye el atraco al Banco de España en un enfrentamiento final.",
+            "episodios": [
+                { "titulo": "Episodio 1", "descripcion": "El Profesor es descubierto y el equipo debe luchar por sobrevivir." },
+                { "titulo": "Episodio 2", "descripcion": "Los militares intervienen, complicando aún más el atraco." },
+                { "titulo": "Episodio 3", "descripcion": "Cada miembro enfrenta su destino mientras el plan llega a su fin." },
+                { "titulo": "Episodio 4", "descripcion": "Alicia toma una decisión inesperada que podría salvar al equipo." },
+                { "titulo": "Episodio 5", "descripcion": "El equipo intenta escapar con el oro en medio de una batalla final." },
+                { "titulo": "Episodio 6", "descripcion": "Una tragedia personal sacude al equipo en el peor momento." },
+                { "titulo": "Episodio 7", "descripcion": "El Profesor planea su último movimiento para derrotar a la policía." },
+                { "titulo": "Episodio 8", "descripcion": "La tensión alcanza su punto máximo mientras el equipo enfrenta su final." },
+                { "titulo": "Episodio 9", "descripcion": "Los ladrones enfrentan sus mayores temores en la recta final." },
+                { "titulo": "Episodio 10", "descripcion": "El destino del equipo y el atraco se decide en un emocionante desenlace." }
+            ]
         }
     ]
 }
-
-
