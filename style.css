@@ -1,100 +1,69 @@
-/* style.css */
 
-/* Reinicio de estilos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Configuración de cuerpo y fuentes */
 body {
-    display: flex;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #2b2b2b;
-    background-color: #f4f4f9;
+    background-color: #1b1b1b;
+    color: #f7f7f7;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Estilos de la barra lateral */
+/* Barra lateral - Más dramática y con iconos o detalles */
 .sidebar {
-    width: 25%;
-    background-color: #2c2c34; /* Gris oscuro para el fondo */
-    color: #f7f7f7;
+    background-color: #141414;
+    color: #e94560;
     padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border-right: 3px solid #d3d3d3;
+    border-right: 3px solid #e94560;
 }
 
 .sidebar h1 {
-    font-size: 26px;
-    color: #e94560; /* Rojo suave relacionado con la serie */
-    margin-bottom: 20px;
-}
-
-.temporada-item {
-    cursor: pointer;
-    margin: 12px 0;
+    font-size: 28px;
+    color: #e94560;
     font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.temporada-item, .episodio-item {
+    color: #f7f7f7;
+    font-weight: bold;
+    margin: 12px 0;
+    transition: all 0.3s ease;
+}
+
+.temporada-item:hover, .episodio-item:hover {
     color: #e94560;
-    font-size: 18px;
-    transition: color 0.3s ease;
+    transform: scale(1.05);
 }
 
-.temporada-item:hover {
-    color: #ff7979; /* Rojo pastel */
-}
-
-/* Lista de episodios (desplegable) */
+/* Contenedor de episodios */
 .episodios-list {
-    margin-left: 20px;
-    display: none;
+    background-color: #262626;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
-.episodio-item {
-    cursor: pointer;
-    margin: 8px 0;
-    color: #cccccc;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.episodio-item:hover {
-    color: #e94560;
-}
-
-/* Contenido principal */
+/* Estilo del contenido principal */
 .main-content {
-    width: 75%;
-    padding: 40px;
-    background-color: #f7f7f9;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 30px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
 
 #contenido-principal h2 {
-    font-size: 28px;
-    color: #2b2b2b;
-    margin-bottom: 20px;
-    text-align: center;
+    color: #e94560;
+    font-size: 30px;
+    margin-bottom: 15px;
 }
 
 #contenido-principal p {
+    color: #ffffff;
     font-size: 18px;
-    line-height: 1.8;
-    max-width: 600px;
-    text-align: justify;
-    color: #4b4b4b;
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #2a2a2a;
+    border-left: 5px solid #e94560;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Transiciones y efectos */
-.sidebar, .main-content, .temporada-item, .episodio-item, #contenido-principal p {
-    transition: all 0.3s ease;
-}
+
+
