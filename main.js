@@ -1,53 +1,50 @@
 const temporadasList = document.getElementById("temporadas");
 const contenidoPrincipal = document.getElementById("contenido-principal");
 
-// Cargar datos de JSON y generar el menú
-fetch("datos_casa_papel.json")
-    .then((response) => response.json())
-    .then((data) => {
-        const { titulo, descripcion, temporadas } = data;
-        document.getElementById("titulo").innerText = titulo;
+// Cargar datos y generar el menú
+async function cargarDatos() {
+    try {
+        const response = await fetch("datos_casa_papel.json");
+        const data = await response.json();
+        document.getElementById("titulo").innerText = data.titulo;
+        generarMenuTemporadas(data.temporadas);
+    } catch (error) {
+        console.error("Error al cargar los datos:", error);
+    }
+}
 
-        // Generar menú de temporadas y episodios
-        temporadas.forEach((temporada, index) => {
-            const temporadaItem = document.createElement("div");
-            temporadaItem.classList.add("temporada-item");
-            temporadaItem.innerText = `Temporada ${index + 1}`;
+// Generar el menú de temporadas y episodios
+function generarMenuTemporadas(temporadas) {
+    temporadas.forEach((temporada, index) => {
+        const temporadaItem = crearElemento("div", "temporada-item", `Temporada ${index + 1}`);
+        const episodiosList = crearElemento("div", "episodios-list");
+        episodiosList.style.display = "none";
 
-            // Contenedor para los episodios
-            const episodiosList = document.createElement("div");
-            episodiosList.classList.add("episodios-list");
-            episodiosList.style.display = "none";
-
-            // Agregar episodios a cada temporada
-            temporada.episodios.forEach((episodio, epIndex) => {
-                const episodioItem = document.createElement("div");
-                episodioItem.classList.add("episodio-item");
-                episodioItem.innerText = `Episodio ${epIndex + 1}: ${episodio.titulo}`;
-                
-                // Evento para mostrar la descripción del episodio
-                episodioItem.addEventListener("click", () => {
-                    mostrarDescripcionEpisodio(episodio.titulo, episodio.descripcion);
-                });
-
-                episodiosList.appendChild(episodioItem);
-            });
-
-            // Mostrar imagen de la temporada al hacer clic
-            temporadaItem.addEventListener("click", () => {
-                mostrarImagenTemporada(index); 
-                const isVisible = episodiosList.style.display === "block";
-                document.querySelectorAll(".episodios-list").forEach(list => list.style.display = "none");
-                episodiosList.style.display = isVisible ? "none" : "block";
-            });
-
-            temporadasList.appendChild(temporadaItem);
-            temporadasList.appendChild(episodiosList);
+        temporada.episodios.forEach((episodio, epIndex) => {
+            const episodioItem = crearElemento("div", "episodio-item", `Episodio ${epIndex + 1}: ${episodio.titulo}`);
+            episodioItem.addEventListener("click", () => mostrarDescripcionEpisodio(episodio.titulo, episodio.descripcion));
+            episodiosList.appendChild(episodioItem);
         });
-    })
-    .catch((error) => console.error("Error al cargar los datos:", error));
 
-// Función para mostrar la descripción del episodio seleccionado
+        temporadaItem.addEventListener("click", () => {
+            mostrarImagenTemporada(index);
+            episodiosList.style.display = episodiosList.style.display === "block" ? "none" : "block";
+        });
+
+        temporadasList.appendChild(temporadaItem);
+        temporadasList.appendChild(episodiosList);
+    });
+}
+
+// Crear elementos de manera reutilizable
+function crearElemento(tag, clase, texto = "") {
+    const elemento = document.createElement(tag);
+    elemento.classList.add(clase);
+    elemento.innerText = texto;
+    return elemento;
+}
+
+// Mostrar la descripción del episodio seleccionado
 function mostrarDescripcionEpisodio(titulo, descripcion) {
     contenidoPrincipal.innerHTML = `
         <div class="descripcion-tarjeta">
@@ -57,18 +54,10 @@ function mostrarDescripcionEpisodio(titulo, descripcion) {
     `;
 }
 
-// Función para mostrar la imagen de la temporada seleccionada
+// Mostrar la imagen de la temporada seleccionada
 function mostrarImagenTemporada(index) {
-    const contenidoPrincipal = document.getElementById('contenido-principal');
     contenidoPrincipal.style.backgroundImage = `url('/imagenes/temporada${index + 1}.png')`;
-    contenidoPrincipal.style.backgroundSize = 'cover'; // Hace que la imagen cubra todo el contenedor
-    contenidoPrincipal.style.backgroundPosition = 'center'; // Centra la imagen
-    contenidoPrincipal.style.backgroundRepeat = 'no-repeat'; // Evita que la imagen se repita
 }
 
-
-
-
-
-
-
+// Ejecutar la carga de datos al iniciar
+cargarDatos();
