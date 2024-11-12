@@ -1,6 +1,3 @@
-// main.js
-
-// Referencias a los elementos del DOM
 const temporadasList = document.getElementById("temporadas");
 const contenidoPrincipal = document.getElementById("contenido-principal");
 
@@ -26,27 +23,21 @@ fetch("datos_casa_papel.json")
             temporada.episodios.forEach((episodio, epIndex) => {
                 const episodioItem = document.createElement("div");
                 episodioItem.classList.add("episodio-item");
-                episodioItem.innerText = `Episodio ${epIndex + 1}: ${
-                    episodio.titulo
-                }`;
-
-                // Añadir evento para mostrar descripción del episodio al hacer clic
+                episodioItem.innerText = `Episodio ${epIndex + 1}: ${episodio.titulo}`;
+                
+                // Evento para mostrar la descripción del episodio
                 episodioItem.addEventListener("click", () => {
-                    mostrarDescripcionEpisodio(
-                        episodio.titulo,
-                        episodio.descripcion
-                    );
+                    mostrarDescripcionEpisodio(episodio.titulo, episodio.descripcion);
                 });
 
                 episodiosList.appendChild(episodioItem);
             });
 
+            // Mostrar imagen de la temporada al hacer clic
             temporadaItem.addEventListener("click", () => {
-                // Alternar visibilidad de la lista de episodios
+                mostrarImagenTemporada(index); 
                 const isVisible = episodiosList.style.display === "block";
-                document
-                    .querySelectorAll(".episodios-list")
-                    .forEach((list) => (list.style.display = "none"));
+                document.querySelectorAll(".episodios-list").forEach(list => list.style.display = "none");
                 episodiosList.style.display = isVisible ? "none" : "block";
             });
 
@@ -59,20 +50,25 @@ fetch("datos_casa_papel.json")
 // Función para mostrar la descripción del episodio seleccionado
 function mostrarDescripcionEpisodio(titulo, descripcion) {
     contenidoPrincipal.innerHTML = `
-        <h2>${titulo}</h2>
-        <p>${descripcion}</p>
+        <div class="descripcion-tarjeta">
+            <h2>${titulo}</h2>
+            <p>${descripcion}</p>
+        </div>
     `;
 }
 
-function mostrarDescripcionEpisodio(titulo, descripcion) {
-    contenidoPrincipal.classList.add("fade");
-    setTimeout(() => {
-        contenidoPrincipal.innerHTML = `
-            <h2>${titulo}</h2>
-            <p>${descripcion}</p>
-        `;
-        contenidoPrincipal.classList.remove("fade");
-    }, 300);
+// Función para mostrar la imagen de la temporada seleccionada
+function mostrarImagenTemporada(index) {
+    const contenidoPrincipal = document.getElementById('contenido-principal');
+    contenidoPrincipal.style.backgroundImage = `url('/imagenes/temporada${index + 1}.png')`;
+    contenidoPrincipal.style.backgroundSize = 'cover'; // Hace que la imagen cubra todo el contenedor
+    contenidoPrincipal.style.backgroundPosition = 'center'; // Centra la imagen
+    contenidoPrincipal.style.backgroundRepeat = 'no-repeat'; // Evita que la imagen se repita
 }
+
+
+
+
+
 
 

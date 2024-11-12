@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Roboto:wght@300;700&display=swap');
 
 body {
     background-color: #1b1b1b;
     color: #f7f7f7;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* Barra lateral - Más dramática y con iconos o detalles */
+/* Barra lateral */
 .sidebar {
     background-color: #141414;
     color: #e94560;
@@ -14,24 +15,34 @@ body {
 }
 
 .sidebar h1 {
-    font-size: 28px;
+    font-family: 'Luckiest Guy', cursive;
+    font-size: 32px;
     color: #e94560;
-    font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 25px;
 }
 
-.temporada-item, .episodio-item {
+.temporada-item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
     color: #f7f7f7;
-    font-weight: bold;
     margin: 12px 0;
     transition: all 0.3s ease;
 }
 
-.temporada-item:hover, .episodio-item:hover {
+.temporada-item:hover,
+.episodio-item:hover {
     color: #e94560;
     transform: scale(1.05);
+}
+
+.episodio-item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #cccccc;
+    cursor: pointer;
+    margin-left: 15px;
 }
 
 /* Contenedor de episodios */
@@ -42,28 +53,92 @@ body {
     margin-top: 10px;
 }
 
-/* Estilo del contenido principal */
+/* Imagen de la temporada seleccionada */
+.imagen-temporada {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin-top: 20px;
+    border-radius: 10px;
+    display: none; 
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Contenido principal */
 .main-content {
     padding: 30px;
     background-color: #1e1e1e;
     color: #e0e0e0;
 }
-
-#contenido-principal h2 {
-    color: #e94560;
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-#contenido-principal p {
+#contenido-principal {
+    padding: 40px;
+    background-size: cover;       
+    background-repeat: no-repeat;  
     color: #ffffff;
-    font-size: 18px;
-    line-height: 1.6;
+    position: relative;
+}
+/* Pseudo-elemento para la imagen de fondo */
+#contenido-principal::before {
+    background-image: var(--background-image);
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+    z-index: -1;                  
+    opacity: 0.5;                 
+}
+
+/* Estilo de la tarjeta de descripción */
+#contenido-principal .descripcion-tarjeta {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
     padding: 20px;
-    background-color: #2a2a2a;
-    border-left: 5px solid #e94560;
+    border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 
+/* Banner */
+.banner {
+    background-image: url('ruta_de_la_imagen/casa_de_papel.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+}
 
+/* Botón de Netflix */
+.netflix-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.netflix-button button {
+    background-color: #e94560;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.netflix-button button:hover {
+    background-color: #c53050;
+}
